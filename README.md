@@ -16,8 +16,9 @@
 1. Nextjs for frontend
 2. Node + Express for backend
 3. MongoDB for Database
-4. Vercel (frontend hosting), AWS/
-5. Docker (optional) - containerization
+4. Vercel (frontend hosting), Render - Backend
+5. Docker  - containerization
+6. Postman - Testing APIs
 
 
 ## Database Schema
