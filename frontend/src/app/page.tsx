@@ -43,7 +43,7 @@ export default function Home() {
           zIndex: -1,
         }}
       >
-        <Image src="/short-bg.gif" alt="Short-King Logo" layout="fill" objectFit="cover" priority />
+        <Image src="/short-bg.gif" alt="Short-King Logo" fill priority unoptimized className="object-cover" />
       </div>
 
       {/* Foreground Content */}
