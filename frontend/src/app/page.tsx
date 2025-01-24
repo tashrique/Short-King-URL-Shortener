@@ -18,9 +18,7 @@ export default function Home() {
 
     try {
       const data = await shortenUrl(originalUrl); // Use the existing API function
-      console.log("Shortened URL Data:", data);
       setShortenedUrl(data.shortcode ? process.env.NEXT_PUBLIC_BASE_URL + data.shortcode : "Error shortening URL");
-      console.log("Shortened URL:", shortenedUrl);
     } catch (error) {
       console.error("Error shortening URL:", error);
     } finally {
@@ -61,7 +59,7 @@ export default function Home() {
             {/* URL Shortening Form */}
             <form className="flex items-center space-x-1" onSubmit={handleSubmit}>
               <Input type="url" placeholder="Paste your link here" value={originalUrl} onChange={(e) => setOriginalUrl(e.target.value)} className="px-4 py-5 w-[600px] bg-white text-black " required />
-              <Button type="submit" disabled={isLoading} className="px-4 py-5 bg-green-500 text-white font-bold">
+              <Button type="submit" disabled={isLoading} className="px-4 py-5 bg-blue-500 text-white font-bold">
                 {isLoading ? "Shortening..." : "Shorten URL"}
               </Button>
             </form>
@@ -74,9 +72,7 @@ export default function Home() {
                 {/* <Input type="text" value={shortenedUrl} readOnly className="px-4 py-2 w-[600px] font-bold underline text-blue-900 bg-white border border-gray-300 cursor-pointer" /> */}
                 <p className="font-bold underline text-white cursor-pointer">{shortenedUrl}</p>
               </Link>
-              <Button className="bg-green" onClick={handleCopy}>
-                Copy URL
-              </Button>
+              <Button onClick={handleCopy}>Copy URL</Button>
             </div>
           )}
         </div>
