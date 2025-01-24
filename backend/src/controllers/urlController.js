@@ -11,11 +11,12 @@ exports.createShortUrl = async (req, res) => {
             return res.status(400).json({ message: "Invalid URL" });
         }
 
-        // Check if the URL already exists in the database
-        const existingUrl = await Url.findOne({ originalUrl });
-        if (existingUrl) {
-            return res.json(existingUrl);
+        // Check if the URL already exists in the database, if does, override the existing one
+        let url = await Url.findOne({ originalUrl });
+        if (url) {
+            return res.status(200).json({ shortcode: url.shortcode });
         }
+
 
         // Generate a unique shortcode
         const shortcode = shortid.generate();
