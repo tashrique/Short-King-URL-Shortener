@@ -54,8 +54,8 @@ export default function Home() {
           <div className="">
             <div className="flex flex-col items-start py-3">
               <h2 className="text-4xl text-white italic font-extrabold">Short-King</h2>
-              <h1 className="text-6xl font-bold text-white">Free URL Shortener</h1>
-              <p className="text-white">For the kings. By the kings.</p>
+              <h1 className="text-6xl font-bold text-white">Free URL Shortener </h1>
+              <p className="text-white">👑 For the kings 👑 By the kings. 👑</p>
             </div>
 
             {/* URL Shortening Form */}
