@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Add Favicon */}
+        {/* Favicon */}
         <link rel="icon" href="/favicon.png" sizes="any" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable}`}>{children}</body>
