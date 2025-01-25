@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { shortenUrl } from "@/utils/api"; // Import your API function
+import { shortenUrl } from "@/utils/api";
 import Link from "next/link";
 
 export default function Home() {
@@ -21,6 +21,7 @@ export default function Home() {
       setShortenedUrl(data.shortcode ? process.env.NEXT_PUBLIC_BASE_URL + data.shortcode : "Error shortening URL");
     } catch (error) {
       console.error("Error shortening URL:", error);
+      setShortenedUrl("Error shortening URL");
     } finally {
       setIsLoading(false);
     }
@@ -28,6 +29,7 @@ export default function Home() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(shortenedUrl);
+    alert("Shortened URL copied to clipboard!");
   };
 
   return (
